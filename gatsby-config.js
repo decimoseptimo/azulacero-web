@@ -4,7 +4,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-favicon`,
             options: {
-                logo: "./src/favicon.png",
+                logo: `./src/favicon.png`,
                 injectHTML: true,
                 icons: {
                     android: true,
@@ -18,6 +18,15 @@ module.exports = {
                     windows: false
                 }
             }
-        }
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `img`,
+                path: `${__dirname}/src/img/`
+            }
+        },
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
     ],
 };

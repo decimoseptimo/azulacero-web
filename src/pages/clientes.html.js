@@ -1,13 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
+import Img from 'gatsby-image';
 
-import limpiaduriaHuizarScreenshot from '../img/limpiaduria-huizar-screenshot.jpg';
-import ppytIngenieriaScreenshot from '../img/ppyt-ingenieria-screenshot.jpg';
-import harashiScreenshot from '../img/harashi-screenshot.jpg';
-import huizarPosScreenshot from '../img/huizar-pos-screenshot.png';
-
-export default () => (
+export default (props) => (
     <div>
         <Layout headerTitle="Entregamos resultados satisfactorios">
         <Helmet>
@@ -19,7 +15,7 @@ export default () => (
         <h1 className="body-title">Algunas de las organizaciones con las que hemos colaborado.</h1>
 
         <div id="huizar" className="media customers">
-            <img className="image" src={limpiaduriaHuizarScreenshot} alt="" />
+            <Img className="image" sizes={props.data.huizar.sizes} />
                 <div className="customer-data clearfix">
                     <div className="main">
                         <h3 className="item title">Limpiaduria Huizar de <span className="no-wrap">Mexicali S.A.</span></h3>
@@ -39,7 +35,7 @@ export default () => (
         </p>
 
         <div id="harashi" className="media customers">
-            <img className="image" src={harashiScreenshot} alt="" />
+            <Img className="image" sizes={props.data.harashi.sizes} />
                 <div className="customer-data clearfix">
                     <div className="main">
                         <h3 className="item title">Harashi de Mexico</h3>
@@ -51,7 +47,7 @@ export default () => (
                 </div>
         </div>
         <p className="body-p">
-            <b>Harashi</b> es una startup mexicana que se especializa en la importacion y venta de smartphones.
+            <b>Harashi</b> es una empresa mexicana que se especializa en la importacion y venta de smartphones.
             La plataforma esta integrada a un procesador de pagos, y a un sistema de soporte 'de tickets' basado en correo electronico.
             Se encuentra planeada su integracion a un sistema de facturacion, y a un procesador de envios.
             En el sitio web se pueden visualizar productos, colocar ordenes, realizar pagos, etc.
@@ -63,7 +59,7 @@ export default () => (
         </p>
 
         <div id="ppyt" className="media customers">
-            <img className="image" src={ppytIngenieriaScreenshot} alt="" />
+            <Img className="image" sizes={props.data.ppyt.sizes} />
                 <div className="customer-data clearfix">
                     <div className="main">
                         <h3 className="item title">PPyT Ingenieria S.A. de C.V.</h3>
@@ -88,7 +84,7 @@ export default () => (
         </p>
 
         <div id="huizar-pos" className="media customers">
-            <img className="image" src={huizarPosScreenshot} alt="" />
+            <Img className="image" sizes={props.data.huizarPos.sizes} />
                 <div className="customer-data clearfix">
                     <div className="main">
                         <h3 className="item title">Limpiaduria Huizar de <span className="no-wrap">Mexicali S.A.</span></h3>
@@ -113,3 +109,28 @@ export default () => (
         </Layout>
     </div>
 );
+
+export const query = graphql`
+  query clientesQuery {
+    huizar: imageSharp(id: { regex: "/huizar.mx.jpg/" }) {
+      sizes(maxWidth: 1200, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    harashi: imageSharp(id: { regex: "/harashi.mx.jpg/" }) {
+      sizes(maxWidth: 1200, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    ppyt: imageSharp(id: { regex: "/ppyt.mx.jpg/" }) {
+      sizes(maxWidth: 1200, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    huizarPos: imageSharp(id: { regex: "/huizar-pos.png/" }) {
+      sizes(maxWidth: 1200, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`

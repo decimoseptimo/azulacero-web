@@ -366,6 +366,10 @@ main {
     vertical-align: middle;
 }
 
+.media .image-lg{
+    display: none;
+}
+
 .media .image-caption {
     position: absolute;
     bottom: 0;
@@ -514,23 +518,15 @@ main {
 
 }
 
-@media screen and (max-width: 499px) {
-
-    .media .image.responsive {
-        width: 200%;
-    }
-
-    .media .image.center {
-        position: relative;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
-
-}
-
 @media screen and (min-width: 500px) {
+
+    .media .image-sm{
+        display: none;
+    }
+
+    .media .image-lg{
+        display: block;
+    }
 
     .media .image-caption {
         text-align: left;
