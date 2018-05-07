@@ -40,7 +40,7 @@ export default ({headerTitle, children}) => (
 
         <footer>
           <div className="footer-item last"><b>Azulacero, agencia interactiva.</b>
-            <span>©2016-{new Date().getFullYear()} Algunos derechos reservados.</span></div>
+            <span>©2015-{new Date().getFullYear()} Algunos derechos reservados.</span></div>
           <div className="footer-contact-info">
             <div className="footer-item"><img src={phone} alt=""/>Telefono 686.235.77.30</div>
             <div className="footer-item last"><img src={mail} alt=""/>contacto@azulacero.mx</div>

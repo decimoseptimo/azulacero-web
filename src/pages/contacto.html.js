@@ -52,7 +52,7 @@ class ContactForm extends React.Component {
     this.setState({isSubmitting: true});
     this.setState({submitMessage: ''});
 
-    Axios.post('http://localhost:9998/api/v1/contact-form', {
+    Axios.post('https://www.azulacero.mx/api/v1/contact-form', {
       name,
       email,
       message
@@ -119,7 +119,7 @@ class ContactForm extends React.Component {
           <Helmet>
             <title>Contacto | Paginas Web Mexicali y Marketing Digital</title>
             <meta name="description"
-                  content="Estamos listos para iniciar tu proyecto, dejanos tus datos y nos comunicaremos a la brevedad. Paginas web en Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
+                  content="Estamos listos para iniciar tu proyecto, dejanos tus datos y nos comunicaremos a la brevedad. Paginas web Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
           </Helmet>
 
           <h4 className="body-subtitle">#Contacto</h4>

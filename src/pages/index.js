@@ -9,7 +9,7 @@ export default (props) => (
       <Helmet>
         <title>Paginas Web Mexicali y Marketing Digital | Azulacero.mx</title>
         <meta name="description"
-              content="Somos una agencia de comunicación digital especializada en Internet. Paginas web en Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
+              content="Somos una agencia de comunicación digital especializada en Internet. Paginas web Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
       </Helmet>
 
       <h4 className="body-subtitle">#Nosotros</h4>

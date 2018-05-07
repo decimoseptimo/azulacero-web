@@ -9,7 +9,7 @@ export default (props) => (
       <Helmet>
         <title>Nuestros Clientes | Paginas Web Mexicali y Marketing Digital</title>
         <meta name="description"
-              content="Algunas de las organizaciones con las que hemos colaborado. Paginas web en Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
+              content="Algunas de las organizaciones con las que hemos colaborado. Paginas web Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
       </Helmet>
 
       <h4 className="body-subtitle">#Clientes</h4>
