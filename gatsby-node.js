@@ -1,6 +1,16 @@
 const slug = require(`slug`);
 const path = require(`path`);
 
+const paginationPath = (path, page, totalPages) => {
+  if (page === 0) {
+    return path
+  } else if (page < 0 || page >= totalPages) {
+    return ''
+  } else {
+    return `${path}/${page + 1}`
+  }
+}
+
 const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
   // Query for nodes to use in creating pages.
   resolve(
@@ -31,7 +41,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       }
     }
     `).then(result => {
-    // Create pages for each article.
+    // Create blog posts
     result.data.allStrapiArticle.edges.forEach(({ node }) => {
       createPage({
         path: `/blog/${slug(node.title)}`,
@@ -39,10 +49,34 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         context: {
           id: node.id,
         },
-      })
-    })
+      });
+    });
+
+    //Create blog pagination
+    const blogPostsCount = result.data.allStrapiArticle.edges.length;
+    const blogPostsPerPaginatedPage = 3;
+    const paginatedPagesCount = Math.ceil(blogPostsCount / blogPostsPerPaginatedPage);
+
+    let index = 0;
+    while(index < paginatedPagesCount){
+        createPage({
+        path: paginationPath('/blog', index, paginatedPagesCount),
+        component:  path.resolve(`src/templates/blog.js`),
+        context: {
+          skip: index * blogPostsPerPaginatedPage,
+          limit: blogPostsPerPaginatedPage,
+          // first: '/blog',
+          // last: paginatedPagesCount,
+          prevPath: paginationPath('/blog', index - 1, paginatedPagesCount),
+          nextPath: paginationPath('/blog', index + 1, paginatedPagesCount),
+        }
+      });
+      index++;
+    }
+
   });
 
   // Query for articles nodes to use in creating pages.
   return getArticles;
+
 };

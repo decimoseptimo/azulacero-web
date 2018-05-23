@@ -21,12 +21,12 @@ export default (props) => (
               content="Blog. Paginas web Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
       </Helmet>
 
-      <h4 className="body-subtitle">#Blog</h4>
+      <h4 className="body-subtitle" id="cat">#Blog</h4>
 
       {props.data.allStrapiArticle.edges.map(({node})=>(
         <div key={node.id}>
           <h2 className="blog-title">
-            <Link to={`/blog/${slug(node.title)}#title`}>{node.title}</Link>
+            <Link to={`/blog/${slug(node.title)}#cat`}>{node.title}</Link>
           </h2>
           <div className="blog-post-info">
             Por <span>{node.author ? node.author.username : 'guest'}</span>
@@ -36,27 +36,35 @@ export default (props) => (
         </div>
       ))}
 
+      <div className="blog-nav">
+        {/*TODO: alt UI «‹1›»*/}
+        {props.pathContext.prevPath ? <Link className="item prev" to={props.pathContext.prevPath+'#cat'}>Anterior</Link> : <span className="item prev">Anterior</span>}
+        {props.pathContext.nextPath ? <Link className="item next" to={props.pathContext.nextPath+'#cat'}>Siguiente</Link> : <span className="item next">Siguiente</span>}
+      </div>
+
     </Layout>
   </div>
 );
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query IndexQuery($skip: Int!, $limit: Int!)  {
     allStrapiArticle(
       filter: {published: {eq: true}}
       sort: {fields: [publishedAt], order: DESC}
-    ) {
-      edges {
-        node {
-          id
-          title
-          content
-          author {
-            username
-          }
-          publishedAt(formatString: "MMMM DD, YYYY", locale: "es")
+      skip: $skip
+      limit: $limit
+    ){
+    edges {
+      node {
+        id
+        title
+        content
+        author {
+          username
         }
+        publishedAt(formatString: "MMMM DD, YYYY", locale: "es")
       }
     }
   }
-`;
+}
+`

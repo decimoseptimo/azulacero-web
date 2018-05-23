@@ -20,9 +20,9 @@ const ArticleTemplate = ({ data }) => (
               content="Blog. Paginas web Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
       </Helmet>
 
-      <h4 className="body-subtitle">#<Link to="/blog">Blog</Link></h4>
+      <h4 className="body-subtitle" id="cat">#<Link to="/blog">Blog</Link></h4>
       <div className="blog-post-wrapper">
-        <h1 className="body-title blog-post-title" id="title">{data.strapiArticle.title}</h1>
+        <h1 className="body-title blog-post-title">{data.strapiArticle.title}</h1>
         <div className="blog-post-info">
           Por <span>{data.strapiArticle.author ? data.strapiArticle.author.username : 'guest'}</span>
           &nbsp;| En {data.strapiArticle.publishedAt}
