@@ -372,12 +372,14 @@ main {
 
 .blog-nav .item {
   position: relative;
-  font: 24px Roboto-Light, sans-serif;
+  font: 48px Roboto-Light, sans-serif;
   color: #999;
   text-decoration: none;
-  border-bottom: 1px solid #999;
-  /*padding: 0 2px;*/
+  border: 1px solid #999;
   text-transform: lowercase;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
 }
 
 .blog-nav .item:not(:last-child) {
@@ -390,17 +392,17 @@ main {
 }
 
 .blog-nav .prev:before {
+  content: "‹";
   position: absolute;
-  top: -1px;
-  left: -12px;
-  content: "❬";
+  top: -14px;
+  right: 11px;
 }
 
 .blog-nav .next:after {
+  content: "›";
   position: absolute;
-  top: -1px;
-  right: -12px;
-  content: "❭";
+  top: -14px;
+  right: 11px;
 }
 
 .body-p {

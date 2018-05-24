@@ -38,8 +38,8 @@ export default (props) => (
 
       <div className="blog-nav">
         {/*TODO: alt UI «‹1›»*/}
-        {props.pathContext.prevPath ? <Link className="item prev" to={props.pathContext.prevPath+'#cat'}>Anterior</Link> : <span className="item prev">Anterior</span>}
-        {props.pathContext.nextPath ? <Link className="item next" to={props.pathContext.nextPath+'#cat'}>Siguiente</Link> : <span className="item next">Siguiente</span>}
+        {props.pathContext.prevPath ? <Link className="item prev" to={props.pathContext.prevPath+'#cat'}>&nbsp;</Link> : <span className="item prev">&nbsp;</span>}
+        {props.pathContext.nextPath ? <Link className="item next" to={props.pathContext.nextPath+'#cat'}>&nbsp;</Link> : <span className="item next">&nbsp;</span>}
       </div>
 
     </Layout>
