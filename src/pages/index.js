@@ -7,17 +7,16 @@ export default (props) => (
   <div>
     <Layout headerTitle="Creamos experiencias para web y moviles">
       <Helmet>
-        <title>Paginas Web Mexicali y Marketing Digital | Azulacero.mx</title>
+        <title>Páginas Web Mexicali y Mercadotecnia Digital | Azulacero.mx</title>
         <meta name="description"
-              content="Somos una agencia de comunicación digital especializada en Internet. Paginas web Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
+              content="Somos una agencia de comunicación digital. Páginas web Mexicali, Desarrollo de Aplicaciones, y Mercadotecnia Digital."/>
       </Helmet>
 
       <h4 className="body-subtitle">#Nosotros</h4>
-      <h1 className="body-title small-space">Somos una agencia de comunicación digital especializada en Internet.</h1>
+      <h1 className="body-title small-space">Somos una agencia de comunicación digital.</h1>
       <p className="body-p small-space">Nuestra principal meta es lograr la <b>comunicación efectiva</b> de nuestros
         clientes a través de <b>análisis personalizados, el desarrollo de estrategias, y la entrega de resultados
-          satisfactorios</b> en la forma de <b>sitios de internet responsivos, aplicaciones web, marketing
-          digital,</b> entre otros.</p>
+          satisfactorios</b> en la forma de <b>páginas de internet responsivas, aplicaciones web, mercadotecnia digital,</b> entre otros.</p>
       <p className="body-p last">
         Nos diferenciamos por tener un fuerte enfoque en la comunicación, estar a la vanguardia en tendencias de diseño,
         e implementar un stack de tecnología moderno.
@@ -38,12 +37,11 @@ export default (props) => (
         <h3 className="image-caption right">Programación &amp; bases de datos</h3>
       </div>
       <p className="body-p small-space">
-        Radicados en la ciudad de Mexicali, ofrecemos los servicios de diseño de paginas web, desarrollo de
-        aplicaciones, administracion de servidores, y realizacion de campañas de marketing digital (Pago por click
-        Adwords, Facebook ads, Email). Pero sobretodo...
+        Establecidos en Mexicali, Baja California, ofrecemos servicios de diseño de páginas web, desarrollo de
+        aplicaciones, administración de campañas pago por click adwords y redes sociales, entre otros. Pero sobretodo...
       </p>
       <p className="body-p"><b>Creamos experiencias digitales de calidad para usuarios de la web y móviles.</b> Y
-        entregamos resultados que satisfacen los objetivos (comerciales o no) de su organización.
+        entregamos resultados que satisfacen los objetivos comerciales de su organización.
       </p>
     </Layout>
   </div>

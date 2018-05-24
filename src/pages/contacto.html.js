@@ -117,9 +117,9 @@ class ContactForm extends React.Component {
       <div>
         <Layout headerTitle="Estamos listos para iniciar tu proyecto">
           <Helmet>
-            <title>Contacto | Paginas Web Mexicali y Marketing Digital</title>
+            <title>Contacto | Páginas Web Mexicali y Mercadotecnia Digital</title>
             <meta name="description"
-                  content="Estamos listos para iniciar tu proyecto, dejanos tus datos y nos comunicaremos a la brevedad. Paginas web Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
+                  content="Estamos listos para iniciar tu proyecto, dejanos tus datos y nos comunicaremos a la brevedad. Páginas web Mexicali, Desarrollo de Aplicaciones, y Mercadotecnia Digital."/>
           </Helmet>
 
           <h4 className="body-subtitle">#Contacto</h4>
