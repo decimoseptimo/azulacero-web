@@ -31,7 +31,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   const getArticles = makeRequest(graphql, `
     {
-      allStrapiArticle {
+      allStrapiArticle (
+        filter: {published: {eq: true}}
+      ){
         edges {
           node {
             id
@@ -66,7 +68,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           skip: index * blogPostsPerPaginatedPage,
           limit: blogPostsPerPaginatedPage,
           // first: '/blog',
-          // last: paginatedPagesCount,
+          pagesCount: paginatedPagesCount,
           prevPath: paginationPath('/blog', index - 1, paginatedPagesCount),
           nextPath: paginationPath('/blog', index + 1, paginatedPagesCount),
         }

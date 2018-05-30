@@ -32,15 +32,18 @@ export default (props) => (
             Por <span>{node.author ? node.author.username : 'guest'}</span>
             &nbsp;| En {node.publishedAt}
           </div>
-          <ReactMarkdown className="body-p" source={trim(node.content, 500)} disallowedTypes={['image']} />
+          <div className="body-p">{
+            node.excerpt ||
+            <ReactMarkdown source={trim(node.content, 500)} disallowedTypes={['image']} />
+          }</div>
         </div>
       ))}
 
+      {props.pathContext.pagesCount>1 &&
       <div className="blog-nav">
-        {/*TODO: alt UI «‹1›»*/}
         {props.pathContext.prevPath ? <Link className="item prev" to={props.pathContext.prevPath+'#cat'}>&nbsp;</Link> : <span className="item prev">&nbsp;</span>}
         {props.pathContext.nextPath ? <Link className="item next" to={props.pathContext.nextPath+'#cat'}>&nbsp;</Link> : <span className="item next">&nbsp;</span>}
-      </div>
+      </div>}
 
     </Layout>
   </div>
@@ -59,6 +62,7 @@ export const pageQuery = graphql`
         id
         title
         content
+        excerpt
         author {
           username
         }
