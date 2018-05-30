@@ -17,9 +17,12 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sharp": "^1.6.44",
     "gatsby-source-filesystem": "^1.5.35",
+    "gatsby-source-strapi": "0.0.3",
     "gatsby-transformer-sharp": "^1.6.24",
     "normalize.css": "^7.0.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-markdown": "^3.3.2",
+    "slug": "^0.9.1"
   },
   "devDependencies": {
     "svg-react-loader": "^0.4.5"

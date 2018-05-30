@@ -19,7 +19,9 @@ export default ({headerTitle, children}) => (
           <div className="header-wrapper-2">
             <Link to="/" className="header-logo"><img src={azulaceroLogo} alt=""/></Link>
             <ul className="header-menu">
+              <li><Link exact to="/blog" activeClassName="active">Blog</Link></li>
               <li><Link exact to="/" activeClassName="active">Nosotros</Link></li>
+              <div className="br"></div>
               <li><Link exact to="/clientes.html" activeClassName="active">Clientes</Link></li>
               <li className="last"><Link exact to="/contacto.html" activeClassName="active">Contacto</Link></li>
             </ul>
