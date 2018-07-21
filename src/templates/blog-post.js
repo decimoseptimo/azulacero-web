@@ -16,9 +16,9 @@ const ArticleTemplate = ({ data, location }) => (
   <div>
     <Layout headerTitle="Trucos y tips para sobresalir">
       <Helmet>
-        <title>{data.strapiArticle.title} | Paginas Web Mexicali y Marketing Digital</title>
+        <title>{data.strapiArticle.title} | Páginas Web Mexicali y Mercadotecnia Digital</title>
         <meta name="description"
-              content="Blog. Paginas web Mexicali, Desarrollo de Aplicaciones, y Marketing Digital."/>
+              content={data.strapiArticle.excerpt} />
       </Helmet>
 
       <h4 className="body-subtitle" id="cat">#<Link to="/blog">Blog</Link></h4>
@@ -52,6 +52,7 @@ export const query = graphql`
       id
       title
       content
+	  excerpt
       author {
         id
         username
