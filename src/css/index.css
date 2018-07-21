@@ -297,6 +297,14 @@ header .header-logo {
 /* Body
    ========================================================================== */
 
+table {
+   margin-bottom: 1em;
+}
+
+table thead tr > th {
+	text-align: left;
+}
+   
 main {
   background-color: #d5d5d5;
 }
@@ -405,11 +413,19 @@ main {
   right: 11px;
 }
 
+h3 {
+  margin-bottom: 0;
+}
+
 .body-p {
+  margin-top: 0;
   margin-bottom: 40px;
   color: #818181;
   font: 18px Roboto-Light, sans-serif;
   line-height: 1.7;
+}
+.body-p p {
+  margin-top: 0;
 }
 
 .body-p.small-space {

@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import Layout from '../components/layout';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
+import DisqusThread from '../components/DisqusThread.js';
 
 const Media = props => (
   <div className="media customers">
@@ -11,7 +12,7 @@ const Media = props => (
   </div>
 );
 
-const ArticleTemplate = ({ data }) => (
+const ArticleTemplate = ({ data, location }) => (
   <div>
     <Layout headerTitle="Trucos y tips para sobresalir">
       <Helmet>
@@ -29,7 +30,16 @@ const ArticleTemplate = ({ data }) => (
         </div>
       </div>
       <ReactMarkdown className="body-p" source={data.strapiArticle.content} renderers={{image: Media}} />
-
+		  {/*console.log(`
+		  ${data.strapiArticle.id}
+		  ${data.strapiArticle.title}
+		  ${location.pathname}
+		  `)*/}
+	  <DisqusThread
+          id="{data.strapiArticle.id}"
+          title="{data.strapiArticle.title}"
+          path="{location.pathname}"
+        />
     </Layout>
   </div>
 );
@@ -39,6 +49,7 @@ export default ArticleTemplate;
 export const query = graphql`
   query ArticleTemplate($id: String!) {
     strapiArticle(id: {eq: $id}) {
+      id
       title
       content
       author {
