@@ -31,7 +31,7 @@ export default ({headerTitle, children}) => (
       </div>
       <div className="header-legend">
         <div className="header-wrapper">
-          <h2>Páginas web Mexicali, desarrollo de aplicaciones, y mercadotecnia digital.</h2>
+          <h2>Marketing Digital y Páginas Web en Mexicali, B.C.</h2>
         </div>
       </div>
     </header>

@@ -16,8 +16,8 @@ const ArticleTemplate = ({ data, location }) => (
   <div>
     <Layout headerTitle="Trucos y tips para sobresalir">
       <Helmet>
-        <title>{data.strapiArticle.title} | Páginas Web Mexicali y Mercadotecnia Digital</title>
-        <meta name="description"
+        <title>{data.strapiArticle.title} | Azulacero.mx</title>
+          <meta name="description"
               content={data.strapiArticle.excerpt} />
       </Helmet>
 

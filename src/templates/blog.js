@@ -16,9 +16,10 @@ export default (props) => (
   <div>
     <Layout headerTitle="Trucos y tips para sobresalir">
       <Helmet>
-        <title>Blog | Páginas Web Mexicali y Mercadotecnia Digital</title>
-        <meta name="description"
-              content="Blog. Páginas web Mexicali, Desarrollo de Aplicaciones, y Mercadotecnia Digital."/>
+        <title>Blog | Marketing Digital y Páginas Web en Mexicali, Baja California</title>
+
+          <meta name="description"
+                content="Hacemos Marketing Digital y Páginas Web en Mexicali, Baja California."/>
       </Helmet>
 
       <h4 className="body-subtitle" id="cat">#Blog</h4>

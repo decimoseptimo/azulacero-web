@@ -6,9 +6,10 @@ export default () => (
   <div>
     <Layout headerTitle="Creamos experiencias para web y moviles">
       <Helmet>
-        <title>Páginas Web Mexicali y Mercadotecnia Digital | Azulacero.mx</title>
+        <title>404 | Marketing Digital y Páginas Web en Mexicali, Baja California</title>
+
         <meta name="description"
-              content="Somos una agencia de comunicación digital. Páginas web Mexicali, Desarrollo de Aplicaciones, y Mercadotecnia Digital."/>
+              content="Hacemos Marketing Digital y Páginas Web en Mexicali, Baja California."/>
       </Helmet>
 
       <h4 className="body-subtitle">#Oopss</h4>

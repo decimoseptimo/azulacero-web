@@ -99,8 +99,7 @@ class ContactForm extends React.Component {
       if (this.state.submitMessage) {
         return <p className={`body-p ${this.state.hasError ? 'error' : 'success'}`}>{this.state.submitMessage}</p>
       }
-      return <p className="body-p">No olvides contarnos de que se trata tu proyecto, e incluir el nombre de tu
-        empresa.</p>
+      return <p className="body-p">Por telefono al <a href="tel:+526862357730" className="a-phone">(686) 235 77 30</a>, o mediante el siguiente formulario. ¡Que tengas buen día!</p>
     }
 
     const submitButton = () => {
@@ -115,15 +114,15 @@ class ContactForm extends React.Component {
 
     return (
       <div>
-        <Layout headerTitle="Estamos listos para iniciar tu proyecto">
+        <Layout headerTitle="Estamos listos para iniciar, ¿estas tú?">
           <Helmet>
-            <title>Contacto | Páginas Web Mexicali y Mercadotecnia Digital</title>
+            <title>Contacto | Marketing Digital y Páginas Web en Mexicali, Baja California</title>
             <meta name="description"
-                  content="Estamos listos para iniciar tu proyecto, dejanos tus datos y nos comunicaremos a la brevedad. Páginas web Mexicali, Desarrollo de Aplicaciones, y Mercadotecnia Digital."/>
+                  content="Estamos listos para iniciar, ¿estas tú? Llama o Deja tus datos y nos pondremos en contacto a la brevedad."/>
           </Helmet>
 
           <h4 className="body-subtitle">#Contacto</h4>
-          <h1 className="body-title">Dejanos tus datos y nos pondremos en contacto a la brevedad.</h1>
+          <h1 className="body-title">Llama o Deja tus datos y nos pondremos en contacto a la brevedad.</h1>
           {submitMessage()}
 
           <form className="form column-group clearfix" onSubmit={this.handleSubmit}>

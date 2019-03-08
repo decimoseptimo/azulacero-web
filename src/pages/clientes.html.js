@@ -7,9 +7,9 @@ export default (props) => (
   <div>
     <Layout headerTitle="Entregamos resultados satisfactorios">
       <Helmet>
-        <title>Nuestros Clientes | Páginas Web Mexicali y Mercadotecnia Digital</title>
+        <title>Clientes | Marketing Digital y Páginas Web en Mexicali, Baja California</title>
         <meta name="description"
-              content="Algunas de las organizaciones con las que hemos colaborado. Páginas web Mexicali, Desarrollo de Aplicaciones, y Mercadotecnia Digital."/>
+              content="Algunas de las organizaciones con las que hemos colaborado. Hacemos Marketing Digital y Páginas Web en Mexicali, Baja California."/>
       </Helmet>
 
       <h4 className="body-subtitle">#Clientes</h4>
