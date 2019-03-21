@@ -24,7 +24,7 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">huizar.mx</div>
             <div className="item separator">
-              <div className="button"><a href="https://www.huizar.mx">Visitar</a></div>
+              <a className="button" href="https://www.huizar.mx">Visitar</a>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">Harashi.mx</div>
             <div className="item separator">
-              <div className="button"><a href="https://www.harashi.mx">Visitar</a></div>
+              <a className="button" href="https://www.harashi.mx">Visitar</a>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">ppyt.mx</div>
             <div className="item separator">
-              <div className="button"><a href="https://www.ppyt.mx">Visitar</a></div>
+              <a className="button" href="https://www.ppyt.mx">Visitar</a>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">Huizar POS</div>
             <div className="item separator">
-              <div className="button"><a href="https://www.azulacero.mx/huizar-pos/">Ver Demo</a></div>
+              <div className="button">Sin Demo</div>
             </div>
           </div>
         </div>
