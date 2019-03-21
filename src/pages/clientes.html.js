@@ -24,7 +24,7 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">huizar.mx</div>
             <div className="item separator">
-              <div className="button"><a href="https://www.huizar.mx">Visitar</a></div>
+              <a className="button" href="https://www.huizar.mx">Visitar</a>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">Harashi.mx</div>
             <div className="item separator">
-              <div className="button"><a href="https://www.harashi.mx">Visitar</a></div>
+              <a className="button" href="https://www.harashi.mx">Visitar</a>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">ppyt.mx</div>
             <div className="item separator">
-              <div className="button"><a href="https://www.ppyt.mx">Visitar</a></div>
+              <a className="button" href="https://www.ppyt.mx">Visitar</a>
             </div>
           </div>
         </div>
@@ -101,22 +101,18 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">Huizar POS</div>
             <div className="item separator">
-              <div className="button"><a href="https://www.azulacero.mx/huizar-pos/">Ver Demo</a></div>
+              <div className="button">Sin Demo</div>
             </div>
           </div>
         </div>
       </div>
-      <p className="body-p">
-        Huizar POS es una <b>aplicacion web</b> desarrollada para Limpiaduria Huizar.
-        Cuenta con una <b>interface grafica</b> y se encuentra conectada al punto de venta fisico en sucursal
-        mediante una <b>interface REST</b>.
-        Su funcion principal es la del <b>envio de correos electronicos transaccionales</b> a los
-        clientes sobre el estado de sus ordenes. Asi como de la <b>consulta en linea</b> de sus ordenes.
-      </p>
-      <p className="body-p last2">
-        Se facilita una version demostrativa en la cual algunas funciones clave como el envio de correos o el acceso
-        restringido se encuentran deshabilitadas.
-      </p>
+        <p className="body-p">
+            Huizar POS es una <b>aplicacion web</b> desarrollada para Limpiaduria Huizar.
+            Cuenta con una <b>interface grafica</b> y se encuentra conectada al punto de venta fisico en sucursal
+            mediante una <b>interface REST</b>.
+            Su funcion principal es la del <b>envio de correos electronicos transaccionales</b> a los
+            clientes sobre el estado de sus ordenes. Ademas cuenta con una <b>API publica</b> de acceso restringido para la <b>consulta en linea</b> del estado de las ordenes.
+        </p>
     </Layout>
   </div>
 );
