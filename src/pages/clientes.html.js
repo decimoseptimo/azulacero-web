@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
 import Img from 'gatsby-image';
+import { graphql } from "gatsby";
 
 export default (props) => (
   <div>
@@ -16,7 +17,7 @@ export default (props) => (
       <h1 className="body-title">Algunas de las organizaciones con las que hemos colaborado.</h1>
 
       <div id="huizar" className="media customers">
-        <Img className="image" sizes={props.data.huizar.sizes}/>
+        <Img className="image" fluid={props.data.huizar.childImageSharp.fluid}/>
         <div className="customer-data clearfix">
           <div className="main">
             <h3 className="item title">Limpiaduria Huizar de <span className="no-wrap">Mexicali S.A.</span></h3>
@@ -38,7 +39,7 @@ export default (props) => (
       </p>
 
       <div id="harashi" className="media customers">
-        <Img className="image" sizes={props.data.harashi.sizes}/>
+        <Img className="image" fluid={props.data.harashi.childImageSharp.fluid}/>
         <div className="customer-data clearfix">
           <div className="main">
             <h3 className="item title">Harashi de Mexico</h3>
@@ -66,7 +67,7 @@ export default (props) => (
       </p>
 
       <div id="ppyt" className="media customers">
-        <Img className="image" sizes={props.data.ppyt.sizes}/>
+        <Img className="image" fluid={props.data.ppyt.childImageSharp.fluid}/>
         <div className="customer-data clearfix">
           <div className="main">
             <h3 className="item title">PPyT Ingenieria S.A. de C.V.</h3>
@@ -93,7 +94,7 @@ export default (props) => (
       </p>
 
       <div id="huizar-pos" className="media customers">
-        <Img className="image" sizes={props.data.huizarPos.sizes}/>
+        <Img className="image" fluid={props.data.huizarPos.childImageSharp.fluid}/>
         <div className="customer-data clearfix">
           <div className="main">
             <h3 className="item title">Limpiaduria Huizar de <span className="no-wrap">Mexicali S.A.</span></h3>
@@ -118,25 +119,33 @@ export default (props) => (
 );
 
 export const query = graphql`
-  query clientesQuery {
-    huizar: imageSharp(id: { regex: "/huizar.mx.jpg/" }) {
-      sizes(maxWidth: 1200, quality: 90) {
-        ...GatsbyImageSharpSizes
+  {
+    huizar: file(relativePath: { eq: "huizar.mx.jpg" }) {
+      childImageSharp {
+          fluid(maxWidth: 1200, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
-    harashi: imageSharp(id: { regex: "/harashi.mx.jpg/" }) {
-      sizes(maxWidth: 1200, quality: 90) {
-        ...GatsbyImageSharpSizes
+    harashi: file(relativePath: { eq: "harashi.mx.jpg" }) {
+      childImageSharp {
+          fluid(maxWidth: 1200, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
-    ppyt: imageSharp(id: { regex: "/ppyt.mx.jpg/" }) {
-      sizes(maxWidth: 1200, quality: 90) {
-        ...GatsbyImageSharpSizes
+    ppyt: file(relativePath: { eq: "ppyt.mx.jpg" }) {
+      childImageSharp {
+          fluid(maxWidth: 1200, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
-    huizarPos: imageSharp(id: { regex: "/huizar-pos.png/" }) {
-      sizes(maxWidth: 1200, quality: 90) {
-        ...GatsbyImageSharpSizes
+    huizarPos: file(relativePath: { eq: "huizar-pos.png" }) {
+      childImageSharp {
+          fluid(maxWidth: 1200, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
   }

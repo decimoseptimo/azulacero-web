@@ -2,9 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../components/layout';
-import Link from 'gatsby-link';
-import Img from 'gatsby-image';
 import DisqusThread from '../components/DisqusThread.js';
+import { Link, graphql } from "gatsby";
 
 const Media = props => (
   <div className="media customers">
@@ -47,7 +46,7 @@ const ArticleTemplate = ({ data, location }) => (
 export default ArticleTemplate;
 
 export const query = graphql`
-  query ArticleTemplate($id: String!) {
+  query($id: String!) {
     strapiArticle(id: {eq: $id}) {
       id
       title

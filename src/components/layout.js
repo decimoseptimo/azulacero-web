@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import {Link} from 'gatsby';
 
 import 'normalize.css';
 import '../css/index.css'
@@ -11,19 +11,20 @@ import mail from '../img/mail.png';
 export default ({headerTitle, children}) => (
   <div>
     <Helmet defaultTitle="Azulacero.mx">
-      <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+        <html lang="es" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
     </Helmet>
     <header>
       <div className="header-main">
         <div className="header-wrapper">
           <div className="header-wrapper-2">
-            <Link to="/" className="header-logo"><img src={azulaceroLogo} alt=""/></Link>
+            <Link to="/" className="header-logo"><img src={azulaceroLogo} alt="azulacero logo"/></Link>
             <ul className="header-menu">
-              <li><Link exact to="/blog" activeClassName="active">Blog</Link></li>
-              <li><Link exact to="/" activeClassName="active">Nosotros</Link></li>
+              <li><Link to="/blog" activeClassName="active">Blog</Link></li>
+              <li><Link to="/" activeClassName="active">Nosotros</Link></li>
               <div className="br"></div>
-              <li><Link exact to="/clientes.html" activeClassName="active">Clientes</Link></li>
-              <li className="last"><Link exact to="/contacto.html" activeClassName="active">Contacto</Link></li>
+              <li><Link to="/clientes.html" activeClassName="active">Clientes</Link></li>
+              <li className="last"><Link to="/contacto.html" activeClassName="active">Contacto</Link></li>
             </ul>
           </div>
           <h2 className="header-title">{headerTitle}</h2>
