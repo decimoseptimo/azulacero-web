@@ -2,9 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../components/layout';
-import Link from 'gatsby-link';
 import slug from 'slug';
-// import Img from 'gatsby-image';
+import { Link, graphql } from "gatsby";
 
 //Trims a string to a maximum length and re-trim if it's on the middle of a word
 function trim(string, maxLength){
@@ -40,10 +39,10 @@ export default (props) => (
         </div>
       ))}
 
-      {props.pathContext.pagesCount>1 &&
+      {props.pageContext.pagesCount>1 &&
       <div className="blog-nav">
-        {props.pathContext.prevPath ? <Link className="item prev" to={props.pathContext.prevPath+'#cat'}>&nbsp;</Link> : <span className="item prev">&nbsp;</span>}
-        {props.pathContext.nextPath ? <Link className="item next" to={props.pathContext.nextPath+'#cat'}>&nbsp;</Link> : <span className="item next">&nbsp;</span>}
+        {props.pageContext.prevPath ? <Link className="item prev" to={props.pageContext.prevPath+'#cat'}>&nbsp;</Link> : <span className="item prev">&nbsp;</span>}
+        {props.pageContext.nextPath ? <Link className="item next" to={props.pageContext.nextPath+'#cat'}>&nbsp;</Link> : <span className="item next">&nbsp;</span>}
       </div>}
 
     </Layout>
@@ -51,7 +50,7 @@ export default (props) => (
 );
 
 export const pageQuery = graphql`
-  query IndexQuery($skip: Int!, $limit: Int!)  {
+  query($skip: Int!, $limit: Int!)  {
     allStrapiArticle(
       filter: {published: {eq: true}}
       sort: {fields: [publishedAt], order: DESC}

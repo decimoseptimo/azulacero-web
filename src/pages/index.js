@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
 import Img from 'gatsby-image';
+import { graphql } from "gatsby";
 
 export default (props) => (
     <div>
@@ -51,18 +52,18 @@ export default (props) => (
             </div>
 
             <div className="media responsive-image">
-                <Img className="image image-sm" sizes={props.data.fotografiaSm.sizes}/>
-                <Img className="image image-lg" sizes={props.data.fotografia.sizes}/>
+                <Img className="image image-sm" fluid={props.data.fotografiaSm.childImageSharp.fluid}/>
+                <Img className="image image-lg" fluid={props.data.fotografia.childImageSharp.fluid}/>
                 <h3 className="image-caption right">Fotografía</h3>
             </div>
             <div className="media responsive-image">
-                <Img className="image image-sm" sizes={props.data.disenoSm.sizes}/>
-                <Img className="image image-lg" sizes={props.data.diseno.sizes}/>
+                <Img className="image image-sm" fluid={props.data.disenoSm.childImageSharp.fluid}/>
+                <Img className="image image-lg" fluid={props.data.diseno.childImageSharp.fluid}/>
                 <h3 className="image-caption">Diseño &amp; Comunicación</h3>
             </div>
             <div className="media responsive-image">
-                <Img className="image image-sm" sizes={props.data.programacionSm.sizes}/>
-                <Img className="image image-lg" sizes={props.data.programacion.sizes}/>
+                <Img className="image image-sm" fluid={props.data.programacionSm.childImageSharp.fluid}/>
+                <Img className="image image-lg" fluid={props.data.programacion.childImageSharp.fluid}/>
                 <h3 className="image-caption right">Programación &amp; bases de datos</h3>
             </div>
 
@@ -80,36 +81,51 @@ export default (props) => (
 );
 
 export const query = graphql`
-  query BlurUpQuery {
-    fotografia: imageSharp(id: { regex: "/fotografia.jpg/" }) {
-      sizes(maxWidth: 1200, quality: 90) {
-        ...GatsbyImageSharpSizes
+  {
+    fotografia: file(relativePath: { eq: "fotografia.jpg" }) {
+      childImageSharp {
+          fluid(maxWidth: 1200, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
-    fotografiaSm: imageSharp(id: { regex: "/fotografia-sm.jpg/" }) {
-      sizes(maxWidth: 500, quality: 90) {
-        ...GatsbyImageSharpSizes
+    fotografiaSm: file(relativePath: { eq: "fotografia-sm.jpg" }) {
+      childImageSharp {
+          fluid(maxWidth: 500, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
-    diseno: imageSharp(id: { regex: "/diseno.png/" }) {
-      sizes(maxWidth: 1200, quality: 90) {
-        ...GatsbyImageSharpSizes
+    
+    diseno: file(relativePath: { eq: "diseno.png" }) {
+      childImageSharp {
+          fluid(maxWidth: 1200, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
-    disenoSm: imageSharp(id: { regex: "/diseno-sm.png/" }) {
-      sizes(maxWidth: 500, quality: 90) {
-        ...GatsbyImageSharpSizes
+    disenoSm: file(relativePath: { eq: "diseno-sm.png" }) {
+      childImageSharp {
+          fluid(maxWidth: 500, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
-    programacion: imageSharp(id: { regex: "/programacion.png/" }) {
-      sizes(maxWidth: 1200, quality: 90) {
-        ...GatsbyImageSharpSizes
+    
+    programacion: file(relativePath: { eq: "programacion.png" }) {
+      childImageSharp {
+          fluid(maxWidth: 1200, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
-    programacionSm: imageSharp(id: { regex: "/programacion-sm.png/" }) {
-      sizes(maxWidth: 500, quality: 90) {
-        ...GatsbyImageSharpSizes
+    programacionSm: file(relativePath: { eq: "programacion-sm.png" }) {
+      childImageSharp {
+          fluid(maxWidth: 500, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
       }
     }
+    
   }
 `

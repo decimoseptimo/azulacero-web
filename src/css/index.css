@@ -166,6 +166,7 @@ header .header-logo {
 }
 
 .header-menu .br {
+  display: block;
   margin-bottom: 10px;
 }
 

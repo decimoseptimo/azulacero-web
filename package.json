@@ -9,22 +9,23 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "gatsby": "^1.9.250",
-    "gatsby-image": "^1.0.48",
-    "gatsby-link": "^1.6.40",
-    "gatsby-plugin-favicon": "^2.1.1",
-    "gatsby-plugin-google-analytics": "^1.0.31",
-    "gatsby-plugin-react-helmet": "^2.0.10",
-    "gatsby-plugin-sharp": "^1.6.44",
-    "gatsby-source-filesystem": "^1.5.35",
-    "gatsby-source-strapi": "0.0.3",
-    "gatsby-transformer-sharp": "^1.6.24",
-    "normalize.css": "^7.0.0",
+    "gatsby": "^2.2.9",
+    "gatsby-image": "^2.0.34",
+    "gatsby-plugin-favicon": "^3.1.5",
+    "gatsby-plugin-google-analytics": "^2.0.17",
+    "gatsby-plugin-react-helmet": "^3.0.10",
+    "gatsby-plugin-sharp": "^2.0.30",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-source-strapi": "0.0.7",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
-    "react-markdown": "^3.3.2",
-    "slug": "^0.9.1"
+    "react-markdown": "^4.0.6",
+    "slug": "^1.0.0"
   },
   "devDependencies": {
-    "svg-react-loader": "^0.4.5"
+    "svg-react-loader": "^0.4.6"
   }
 }

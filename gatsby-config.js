@@ -26,6 +26,8 @@ module.exports = {
         path: `${__dirname}/src/img/`
       }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -40,8 +42,6 @@ module.exports = {
         // exclude: ["/preview/**", "/do-not-track/me/too/"],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
