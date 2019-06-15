@@ -6,6 +6,9 @@ import { graphql } from "gatsby";
 
 export default (props) => (
     <div>
+        {console.log('index: ')}
+        {console.log(process.env.CONTENTFUL_ACCESS_TOKEN)}
+        {console.log(process.env.GATSBY_SAMPLE_TOKEN)}
         <Layout headerTitle="Creamos experiencias para web y moviles">
             <Helmet>
                 <title>Marketing Digital y Páginas Web en Mexicali, Baja California | Azulacero.mx</title>
