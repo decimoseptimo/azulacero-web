@@ -15,6 +15,7 @@
     "gatsby-plugin-google-analytics": "^2.0.17",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-sharp": "^2.0.30",
+    "gatsby-source-contentful": "^2.0.71",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-source-strapi": "0.0.7",
     "gatsby-transformer-sharp": "^2.1.17",

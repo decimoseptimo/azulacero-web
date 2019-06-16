@@ -23,7 +23,7 @@ export default (props) => (
 
       <h4 className="body-subtitle" id="cat">#Blog</h4>
 
-      {props.data.allStrapiArticle.edges.map(({node})=>(
+      {props.data.allContentfulArticle.edges.map(({node})=>(
         <div key={node.id}>
           <h2 className="blog-title">
             <Link to={`/blog/${slug(node.title)}#cat`}>{node.title}</Link>
@@ -33,8 +33,8 @@ export default (props) => (
             &nbsp;| En {node.publishedAt}
           </div>
           <div className="body-p">{
-            node.excerpt ||
-            <ReactMarkdown source={trim(node.content, 500)} disallowedTypes={['image']} />
+            node.excerpt.excerpt ||
+            <ReactMarkdown source={trim(node.content.content.content, 500)} disallowedTypes={['image']} />
           }</div>
         </div>
       ))}
@@ -51,7 +51,7 @@ export default (props) => (
 
 export const pageQuery = graphql`
   query($skip: Int!, $limit: Int!)  {
-    allStrapiArticle(
+    allContentfulArticle(
       filter: {published: {eq: true}}
       sort: {fields: [publishedAt], order: DESC}
       skip: $skip
@@ -61,8 +61,8 @@ export const pageQuery = graphql`
       node {
         id
         title
-        content
-        excerpt
+        content { content }
+        excerpt { excerpt }
         author {
           username
         }

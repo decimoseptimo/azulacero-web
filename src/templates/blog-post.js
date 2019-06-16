@@ -15,28 +15,28 @@ const ArticleTemplate = ({ data, location }) => (
   <div>
     <Layout headerTitle="Trucos y tips para sobresalir">
       <Helmet>
-        <title>{data.strapiArticle.title} | Azulacero.mx</title>
+        <title>{data.contentfulArticle.title} | Azulacero.mx</title>
           <meta name="description"
-              content={data.strapiArticle.excerpt} />
+              content={data.contentfulArticle.excerpt.excerpt} />
       </Helmet>
 
       <h4 className="body-subtitle" id="cat">#<Link to="/blog">Blog</Link></h4>
       <div className="blog-post-wrapper">
-        <h1 className="body-title blog-post-title">{data.strapiArticle.title}</h1>
+        <h1 className="body-title blog-post-title">{data.contentfulArticle.title}</h1>
         <div className="blog-post-info">
-          Por <span>{data.strapiArticle.author ? data.strapiArticle.author.username : 'guest'}</span>
-          &nbsp;| En {data.strapiArticle.publishedAt}
+          Por <span>{data.contentfulArticle.author ? data.contentfulArticle.author.username : 'guest'}</span>
+          &nbsp;| En {data.contentfulArticle.publishedAt}
         </div>
       </div>
-      <ReactMarkdown className="body-p" source={data.strapiArticle.content} renderers={{image: Media}} />
+      <ReactMarkdown className="body-p" source={data.contentfulArticle.content.content} renderers={{image: Media}} />
 		  {/*console.log(`
-		  ${data.strapiArticle.id}
-		  ${data.strapiArticle.title}
+		  ${data.contentfulArticle.id}
+		  ${data.contentfulArticle.title}
 		  ${location.pathname}
 		  `)*/}
 	  <DisqusThread
-          id="{data.strapiArticle.id}"
-          title="{data.strapiArticle.title}"
+          id="{data.contentfulArticle.id}"
+          title="{data.contentfulArticle.title}"
           path="{location.pathname}"
         />
     </Layout>
@@ -47,11 +47,11 @@ export default ArticleTemplate;
 
 export const query = graphql`
   query($id: String!) {
-    strapiArticle(id: {eq: $id}) {
+    contentfulArticle(id: {eq: $id}) {
       id
       title
-      content
-	  excerpt
+      content { content }
+	  excerpt { excerpt }
       author {
         id
         username

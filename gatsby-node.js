@@ -1,14 +1,8 @@
-require(`react`)
 require("dotenv").config({
     path: `.env.${process.env.NODE_ENV}`,
 })
-
 const slug = require(`slug`);
 const path = require(`path`);
-
-{console.log('node: ')}
-{console.log(process.env.CONTENTFUL_ACCESS_TOKEN)}
-{console.log(process.env.GATSBY_SAMPLE_TOKEN)}
 
 const paginationPath = (path, page, totalPages) => {
   if (page === 0) {
@@ -35,59 +29,59 @@ const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
 
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
-// exports.createPages = ({ actions, graphql }) => {
-//   const { createPage } = actions;
-//
-//   const getArticles = makeRequest(graphql, `
-//     {
-//       allStrapiArticle (
-//         filter: {published: {eq: true}}
-//       ){
-//         edges {
-//           node {
-//             id
-//             title
-//           }
-//         }
-//       }
-//     }
-//     `).then(result => {
-//     // Create blog posts
-//     result.data.allStrapiArticle.edges.forEach(({ node }) => {
-//       createPage({
-//         path: `/blog/${slug(node.title)}`,
-//         component: path.resolve(`src/templates/blog-post.js`),
-//         context: {
-//           id: node.id,
-//         },
-//       });
-//     });
-//
-//     //Create blog pagination
-//     const blogPostsCount = result.data.allStrapiArticle.edges.length;
-//     const blogPostsPerPaginatedPage = 3;
-//     const paginatedPagesCount = Math.ceil(blogPostsCount / blogPostsPerPaginatedPage);
-//
-//     let index = 0;
-//     while(index < paginatedPagesCount){
-//         createPage({
-//         path: paginationPath('/blog', index, paginatedPagesCount),
-//         component:  path.resolve(`src/templates/blog.js`),
-//         context: {
-//           skip: index * blogPostsPerPaginatedPage,
-//           limit: blogPostsPerPaginatedPage,
-//           // first: '/blog',
-//           pagesCount: paginatedPagesCount,
-//           prevPath: paginationPath('/blog', index - 1, paginatedPagesCount),
-//           nextPath: paginationPath('/blog', index + 1, paginatedPagesCount),
-//         }
-//       });
-//       index++;
-//     }
-//
-//   });
-//
-//   // Query for articles nodes to use in creating pages.
-//   return getArticles;
-//
-// };
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+
+  const getArticles = makeRequest(graphql, `
+    {
+      allContentfulArticle (
+        filter: {published: {eq: true}}
+      ){
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
+    }
+    `).then(result => {
+    // Create blog posts
+    result.data.allContentfulArticle.edges.forEach(({ node }) => {
+      createPage({
+        path: `/blog/${slug(node.title)}`,
+        component: path.resolve(`src/templates/blog-post.js`),
+        context: {
+          id: node.id,
+        },
+      });
+    });
+
+    // //Create blog pagination
+    const blogPostsCount = result.data.allContentfulArticle.edges.length;
+    const blogPostsPerPaginatedPage = 3;
+    const paginatedPagesCount = Math.ceil(blogPostsCount / blogPostsPerPaginatedPage);
+
+    let index = 0;
+    while(index < paginatedPagesCount){
+        createPage({
+        path: paginationPath('/blog', index, paginatedPagesCount),
+        component:  path.resolve(`src/templates/blog.js`),
+        context: {
+          skip: index * blogPostsPerPaginatedPage,
+          limit: blogPostsPerPaginatedPage,
+          // first: '/blog',
+          pagesCount: paginatedPagesCount,
+          prevPath: paginationPath('/blog', index - 1, paginatedPagesCount),
+          nextPath: paginationPath('/blog', index + 1, paginatedPagesCount),
+        }
+      });
+      index++;
+    }
+
+  });
+
+  // Query for articles nodes to use in creating pages.
+  return getArticles;
+
+};
