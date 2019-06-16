@@ -19,6 +19,7 @@
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-source-strapi": "0.0.7",
     "gatsby-transformer-sharp": "^2.1.17",
+    "mailgun-js": "^0.22.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",

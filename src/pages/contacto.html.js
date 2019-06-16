@@ -52,7 +52,7 @@ class ContactForm extends React.Component {
     this.setState({isSubmitting: true});
     this.setState({submitMessage: ''});
 
-    Axios.post('https://www.azulacero.mx/api/v1/contact-form', {
+    Axios.post('/.netlify/functions/contact', {
       name,
       email,
       message
