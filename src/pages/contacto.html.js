@@ -62,30 +62,16 @@ class ContactForm extends React.Component {
         this.setState({hasError: false});
         this.setState({submitMessage: 'Hemos recibido tu mensaje, nos pondremos en contacto a la brevedad.'})
         this.resetForm();
-        console.log('success');
-        console.log(result);
+        // console.log('success');
+        // console.log(result);
       })
       .catch((e) => {
         this.setState({isSubmitting: false});
         this.setState({submitMessage: 'Hubo un error al procesar tu solicitud. Por favor intenta mas tarde.'})
         this.setState({hasError: true});
-        console.log('fail')
-        console.log(e)
+        // console.log('fail')
+        // console.log(e)
       });
-
-    // Axios.get('http://localhost:9998/api/v1')
-    //     .then((result)=>{
-    //         this.setState({isSubmitting: false});
-    //         this.setState({submitMessage: 'Hemos recibido tu mensaje, nos pondremos en contacto a la brevedad.'})
-    //         this.resetForm();
-    //         console.log(result)
-    //     })
-    //     .catch((e)=>{
-    //         this.setState({isSubmitting: false});
-    //         this.setState({submitMessage: 'Hubo un error al procesar tu solicitud. Por favor intenta mas tarde'})
-    //         this.setState({hasError: true});
-    //         console.log(e)
-    //     });
   }
 
   resetForm = () => {
