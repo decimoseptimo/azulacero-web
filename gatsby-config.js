@@ -2,6 +2,9 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const CONTENTFUL_HOST = (process.env.NODE_ENV == 'production') ? "cdn.contentful.com" : "preview.contentful.com"
+console.log(CONTENTFUL_HOST)
+
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -62,7 +65,7 @@ module.exports = {
       options: {
         spaceId: `0iq1qo4qtprv`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-		host: "preview.contentful.com"
+		host: CONTENTFUL_HOST
       },
     },
   ],
