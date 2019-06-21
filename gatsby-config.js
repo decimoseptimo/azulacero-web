@@ -68,5 +68,6 @@ module.exports = {
 		host: CONTENTFUL_HOST
       },
     },
+    `gatsby-plugin-remove-trailing-slashes`,
   ],
 };
