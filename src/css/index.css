@@ -414,7 +414,7 @@ main {
   right: 11px;
 }
 
-h3 {
+h3, h4 {
   margin-bottom: 0;
 }
 
@@ -423,6 +423,10 @@ h3 {
     font-family: Roboto-Regular, sans-serif;
     font-weight: normal;
     text-decoration: none;
+}
+
+main a {
+  color: cadetblue;
 }
 
 .body-p {
