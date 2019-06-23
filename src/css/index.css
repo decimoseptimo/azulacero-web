@@ -3,62 +3,50 @@
 
 @font-face {
   font-family: 'Montserrat-Bold';
-  src: url('../fonts/Montserrat700.eot');
-  src: url('../fonts/Montserrat700.eot') format('embedded-opentype'),
-  url('../fonts/Montserrat700.woff2') format('woff2'),
-  url('../fonts/Montserrat700.woff') format('woff'),
-  url('../fonts/Montserrat700.ttf') format('truetype'),
-  url('../fonts/Montserrat700.svg#Montserrat700') format('svg');
+  font-display: swap;
+  src:
+    url('../fonts/Montserrat700.woff2') format('woff2'),
+    url('../fonts/Montserrat700.woff') format('woff');
 }
 
 @font-face {
   font-family: 'MyriadProBoldCondIt';
-  src: url('../fonts/MyriadProBoldCondIt.eot');
-  src: url('../fonts/MyriadProBoldCondIt.eot') format('embedded-opentype'),
-  url('../fonts/MyriadProBoldCondIt.woff2') format('woff2'),
-  url('../fonts/MyriadProBoldCondIt.woff') format('woff'),
-  url('../fonts/MyriadProBoldCondIt.ttf') format('truetype'),
-  url('../fonts/MyriadProBoldCondIt.svg#MyriadProBoldCondIt') format('svg');
+  font-display: swap;
+  src:
+    url('../fonts/MyriadProBoldCondIt.woff2') format('woff2'),
+    url('../fonts/MyriadProBoldCondIt.woff') format('woff');
 }
 
 @font-face {
   font-family: 'OpenSans-Semibold';
-  src: url('../fonts/OpenSans600.eot');
-  src: url('../fonts/OpenSans600.eot') format('embedded-opentype'),
-  url('../fonts/OpenSans600.woff2') format('woff2'),
-  url('../fonts/OpenSans600.woff') format('woff'),
-  url('../fonts/OpenSans600.ttf') format('truetype'),
-  url('../fonts/OpenSans600.svg#OpenSans600') format('svg');
+  font-display: swap;
+  src:
+    url('../fonts/OpenSans600.woff2') format('woff2'),
+    url('../fonts/OpenSans600.woff') format('woff');
 }
 
 @font-face {
   font-family: 'OpenSans-Bold';
-  src: url('../fonts/OpenSans700.eot');
-  src: url('../fonts/OpenSans700.eot') format('embedded-opentype'),
-  url('../fonts/OpenSans700.woff2') format('woff2'),
-  url('../fonts/OpenSans700.woff') format('woff'),
-  url('../fonts/OpenSans700.ttf') format('truetype'),
-  url('../fonts/OpenSans700.svg#OpenSans700') format('svg');
+  font-display: swap;
+  src:
+    url('../fonts/OpenSans700.woff2') format('woff2'),
+    url('../fonts/OpenSans700.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Roboto-Light';
-  src: url('../fonts/Roboto300.eot');
-  src: url('../fonts/Roboto300.eot') format('embedded-opentype'),
-  url('../fonts/Roboto300.woff2') format('woff2'),
-  url('../fonts/Roboto300.woff') format('woff'),
-  url('../fonts/Roboto300.ttf') format('truetype'),
-  url('../fonts/Roboto300.svg#Roboto300') format('svg');
+  font-display: swap;
+  src:
+    url('../fonts/Roboto300.woff2') format('woff2'),
+    url('../fonts/Roboto300.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Roboto-Regular';
-  src: url('../fonts/Robotoregular.eot');
-  src: url('../fonts/Robotoregular.eot') format('embedded-opentype'),
-  url('../fonts/Robotoregular.woff2') format('woff2'),
-  url('../fonts/Robotoregular.woff') format('woff'),
-  url('../fonts/Robotoregular.ttf') format('truetype'),
-  url('../fonts/Robotoregular.svg#Robotoregular') format('svg');
+  font-display: swap;
+  src:
+    url('../fonts/Robotoregular.woff2') format('woff2'),
+    url('../fonts/Robotoregular.woff') format('woff');
 }
 
 /* Global
