@@ -415,6 +415,7 @@ h3, h4 {
 
 main a {
   color: cadetblue;
+  word-wrap: break-word;
 }
 
 .body-p {
