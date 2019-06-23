@@ -26,7 +26,7 @@ export default (props) => (
       {props.data.allContentfulArticle.edges.map(({node})=>(
         <div key={node.id}>
           <h2 className="blog-title">
-            <Link to={`/blog/${slug(node.title)}#cat`}>{node.title}</Link>
+            <Link to={`/blog/${slug(node.title)}/#cat`}>{node.title}</Link>
           </h2>
           <div className="blog-post-info">
             Por <span>{node.author ? node.author.username : 'guest'}</span>

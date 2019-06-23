@@ -20,11 +20,11 @@ export default ({headerTitle, children}) => (
           <div className="header-wrapper-2">
             <Link to="/" className="header-logo"><img src={azulaceroLogo} alt="azulacero logo"/></Link>
             <ul className="header-menu">
-              <li><Link to="/blog" activeClassName="active" partiallyActive={true}>Blog</Link></li>
+              <li><Link to="/blog/" activeClassName="active" partiallyActive={true}>Blog</Link></li>
               <li><Link to="/" activeClassName="active">Nosotros</Link></li>
               <div className="br"></div>
-              <li><Link to="/clientes.html" activeClassName="active">Clientes</Link></li>
-              <li className="last"><Link to="/contacto.html" activeClassName="active">Contacto</Link></li>
+              <li><Link to="/clientes/" activeClassName="active">Clientes</Link></li>
+              <li className="last"><Link to="/contacto/" activeClassName="active">Contacto</Link></li>
             </ul>
           </div>
           <h2 className="header-title">{headerTitle}</h2>

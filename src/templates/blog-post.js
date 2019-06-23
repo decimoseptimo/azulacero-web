@@ -20,7 +20,7 @@ const ArticleTemplate = ({ data, location }) => (
               content={data.contentfulArticle.excerpt.excerpt} />
       </Helmet>
 
-      <h4 className="body-subtitle" id="cat">#<Link to="/blog">Blog</Link></h4>
+      <h4 className="body-subtitle" id="cat">#<Link to="/blog/">Blog</Link></h4>
       <div className="blog-post-wrapper">
         <h1 className="body-title blog-post-title">{data.contentfulArticle.title}</h1>
         <div className="blog-post-info">

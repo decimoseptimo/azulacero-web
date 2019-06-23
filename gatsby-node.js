@@ -49,7 +49,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Create blog posts
     result.data.allContentfulArticle.edges.forEach(({ node }) => {
       createPage({
-        path: `/blog/${slug(node.title)}`,
+        path: `/blog/${slug(node.title)}/`,
         component: path.resolve(`src/templates/blog-post.js`),
         context: {
           id: node.id,
@@ -65,15 +65,15 @@ exports.createPages = ({ actions, graphql }) => {
     let index = 0;
     while(index < paginatedPagesCount){
         createPage({
-        path: paginationPath('/blog', index, paginatedPagesCount),
+        path: paginationPath('/blog/', index, paginatedPagesCount),
         component:  path.resolve(`src/templates/blog.js`),
         context: {
           skip: index * blogPostsPerPaginatedPage,
           limit: blogPostsPerPaginatedPage,
           // first: '/blog',
           pagesCount: paginatedPagesCount,
-          prevPath: paginationPath('/blog', index - 1, paginatedPagesCount),
-          nextPath: paginationPath('/blog', index + 1, paginatedPagesCount),
+          prevPath: paginationPath('/blog/', index - 1, paginatedPagesCount),
+          nextPath: paginationPath('/blog/', index + 1, paginatedPagesCount),
         }
       });
       index++;
