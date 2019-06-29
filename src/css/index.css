@@ -509,6 +509,10 @@ main a {
   font: 16px OpenSans-Bold, sans-serif;
 }
 
+.media .gatsby-resp-image-wrapper {
+  max-width: none !important;
+}
+
 .media .customer-data {
   position: relative;
   margin: 10px -10px 0 -10px;

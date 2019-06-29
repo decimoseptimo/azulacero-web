@@ -2,7 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const CONTENTFUL_HOST = (process.env.NODE_ENV == 'production') ? "cdn.contentful.com" : "preview.contentful.com"
+const CONTENTFUL_HOST = (process.env.NODE_ENV === 'production') ? "cdn.contentful.com" : "preview.contentful.com"
 console.log(CONTENTFUL_HOST)
 
 module.exports = {
@@ -68,6 +68,22 @@ module.exports = {
 		host: CONTENTFUL_HOST
       },
     },
-    //`gatsby-plugin-remove-trailing-slashes`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+          plugins: [
+              {
+                  resolve: `gatsby-remark-images-contentful`,
+                  options: {
+                      // It's important to specify the maxWidth (in pixels) of
+                      // the content container as this plugin uses this as the
+                      // base for generating different widths of each image.
+                      maxWidth: 1200,
+                      linkImagesToOriginal: false,
+                  },
+              },
+          ],
+      },
+    },
   ],
 };
