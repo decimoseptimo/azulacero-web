@@ -75,7 +75,7 @@ export default (props) => (
           <div className="sidebar">
             <div className="item domain">ppyt.mx</div>
             <div className="item separator">
-              <a className="button" href="https://www.ppyt.mx">Visitar</a>
+              <a className="button" href="https://ppyt.netlify.app">Visitar</a>
             </div>
           </div>
         </div>
